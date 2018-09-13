@@ -119,8 +119,8 @@ class node:
         else:
             return NotImplemented 
 
-            
-            
+
+
 def childNode(n, action, problem):
     return node(n,action, n.cost + 1, problem.apply(action,state(n.state)))
 
@@ -193,6 +193,7 @@ import random
 
 def applyRndMoves(numMoves,s,p):
     for i in range(numMoves):
+        print(s) 
         p.apply(p.actions[random.randint(0,3)],s)
     
 def solution(node):
