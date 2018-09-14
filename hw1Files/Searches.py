@@ -25,28 +25,7 @@ class Searches:
         #reset the node counter for profiling
         #the serach should return the result of 'solution(node)'
         print("I am an empty shell of a function.")        
-        # print(problem.initialState)
-        # print(state.toTuple(problem.goalState))
-        # print(state.toTuple(problem.initialState))
-        
 
-        # node1 = problem.initialState()
-        # node.cost=0
-        # frontier = Queue()
-        # frontier.put(node)
-        # explored = []
-
-        # while frontier.not_empty:
-        #     if frontier.empty: 
-        #         return solution == []
-        #     node = frontier.get()
-        #     explored.append(node.state)
-        #     for move in problem.applicable(node.state):
-        #         child = childNode(node,move,problem)
-        #         if not explored.__contains__(child):
-        #             if problem.goalTest(child.state):
-        #                 return solution(child)
-        #             frontier.put(child)
         #what i need
         # list of visited nodes: if not visited, add to queue, add to visited list 
         # queue of children nodes to explore 
@@ -69,13 +48,7 @@ class Searches:
             #qList.not_empty:
             # newNode = fList.__getitem__(0)
             newNode = fList.get()
-            print(newNode.state)
-            print('state')
-            print(newNode.cost)
-            # currNode = qList.get()#node
-            # cNode = newList.pop(0)
-            #add currNode to visited
-            # visited.append(currNode)
+
             visited.append(newNode.state)
             for move in problem.applicable(newNode.state):
                 # node.parent = newNode
@@ -83,19 +56,15 @@ class Searches:
                 # node.cost = 0
                 # node.state = newNode
                 # node.nodeID = node.nodeCount
-                print('about to perform child node')
+                # print('about to perform child node')
                 child = childNode(newNode,move,problem)
                
-                # print(child)
-                # print(currNode)
-                # print('parent')
-                print('newList')
-                print(child.state)
+
                 y=0
                 if not visited.__contains__(child.state):
                     # add to qList
                     if problem.goalTest(child.state):
-                        print('parent')
+                        # print('parent')
                         return solution(child)        
                     fList.put(child)
                     # newList.append(child.state)
@@ -126,14 +95,7 @@ if __name__ == '__main__':
     p.apply('L',s)
     
     p.initialState=state(s)
-    # visited.append(p.goalState)
-    # print(visited[0])
-    # print(s)
-    # print('hello im here')
-    # # me testing 
-    # print("initial state")
-    # print(p.initialState)
-    # print("initial state")
+
     
     ''' 
     The sultion, should basically be the reverse order
@@ -145,8 +107,7 @@ if __name__ == '__main__':
     node.nodeCount=0
     
     res=search.graphBFS(p)
-    # print(res)
-    # print("res")
+
     print("Time " + str(time.clock()-startTime))
     print("Explored Nodes: "+ str(node.nodeCount))
  
