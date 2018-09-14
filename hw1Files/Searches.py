@@ -101,18 +101,6 @@ class Searches:
                     # newList.append(child.state)
                     # pass
                
-            
-
-        # if currNode == problem.goalState:
-        #     return solution(currNode) 
-        #     # return current node as the answer.
-        # #add node to visited list 
-        # if not visited.__contains__(currNode):
-        #     visited.append(currNode)
-        #     print('appending node to visited')
-        #     print(visited[0])
-            
-
 
     def idDFS(self,problem):
         #reset the node counter for profiling
