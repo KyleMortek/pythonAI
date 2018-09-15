@@ -204,7 +204,7 @@ def solution(node):
 
     while node.parent != None:
         actions.insert(0,node.action)
-        # print(actions)  
+        print(actions)  
         node=node.parent
 
     return actions, cost        

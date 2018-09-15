@@ -1,2 +1,1 @@
-
-                node.parent = currNode
+o
