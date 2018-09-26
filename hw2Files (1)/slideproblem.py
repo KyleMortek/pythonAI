@@ -4,9 +4,12 @@ Created on Thu Sep 14 11:03:51 2017
 
 @author: nnapp
 """
+
 import numbers
 import random
+from queue import PriorityQueue
 
+pq = PriorityQueue()
 class State:
     """ State of sliding number puzzle
         Contains array of values called 'board' to indicate
@@ -58,7 +61,6 @@ class State:
             return self.h < other.h
         else:
             return NotImplemented
-            
 
     #turn into immutable ojbect for set lookup
     def toTuple(self):
@@ -75,7 +77,7 @@ class State:
                 if self.board[row][col]==0:
                     self.position=[row,col]
                     return None
-        raise StandardError('Set board configuration does not have an empy spot!')
+        assert False, 'Set board configuration does not have an empy spot!'
 
 #node class for serach graph        
 class Node:
@@ -103,10 +105,9 @@ class Node:
         if self.action != None:
             rstr+='Action: ' + self.action  + '\n'
         rstr+='Cost:   ' + str(self.cost) + '\n'
-        rstr+='State:\n' + str(self.state)
+        rstr+='State:\n' + str(self.state) +'\n'
+        rstr+='nf: \n' + str(self.f)+'\n'
         return rstr
-
-
             
     def __lt__(self,other):
         if isinstance(other,Node):
@@ -146,7 +147,7 @@ class Problem:
             post[1]=min(pre[1]+1,s.boardSize-1)
         else:
             print('Undefined action: ' + str(a))
-            raise StandardError('Action not defined for this problem!')
+            assert False, 'Action not defined for this problem!'
 
         #store the old tile
         tile=s.board[pre[0]][pre[1]]

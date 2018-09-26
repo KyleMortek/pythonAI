@@ -42,7 +42,7 @@ if __name__ == '__main__':
     # change the number of random moves appropriately
     # The longes solution is 31 moves, see if you can find a solution >=30 moves. 
     # Pleaes post them if you find them!
-    
+    print(si)
     apply_rnd_moves(15,si,p)
     p.initialState=si
     
