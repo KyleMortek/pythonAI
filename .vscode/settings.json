@@ -1,8 +1,0 @@
-{
-    "python.pythonPath": "C:\\Users\\Kyle\\AppData\\Local\\Programs\\Python\\Python37\\python.exe",
-    "python.linting.enabled": false,
-    "code-runner.runInTerminal": true,
-    "python.formatting.provider": "black",
-    "pddlParser.executableOrService": "java -javaagent:PDDL4J-v3.7.2/pddl4j-3.7.2.jar -server -Xms2048m -Xmx2048m fr.uga.pddl4j.parser.Parser",
-    "pddlParser.executableOptions": "$(parser) -o $(domain) -f $(problem)"
-}
