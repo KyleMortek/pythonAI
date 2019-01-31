@@ -1,0 +1,1 @@
+csp.goal_test(assignments)is True

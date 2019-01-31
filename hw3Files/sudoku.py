@@ -87,7 +87,7 @@ class CSP():
             return []
         else:
             assignment = dict(state)
-            var = first([v for v in self.variables if v not in assignment])
+            var =([v for v in self.variables if v not in assignment])
             return [(var, val) for val in self.domains[var]
                     if self.nconflicts(var, val, assignment) == 0]
 
@@ -139,6 +139,7 @@ def count(seq):
 def mac(csp, var, value, assignment, removals):
     """Maintain arc consistency."""
     return AC3(csp, [(X, var) for X in csp.neighbors[var]], removals)
+    # return AC3(csp, [(X, var) for X in csp.neighbors[var]], removals)
 
 def different_values_constraint(A, a, B, b):
     return a != b
@@ -195,7 +196,7 @@ class Sudoku(CSP):
 
         def show_box(box): return [' '.join(map(show_cell, row)) for row in box]
 
-        def show_cell(cell): return str(assignment.get(cell, '.'))
+        def show_cell(cell): return str(assignment.get(cell, ' '))
 
         def abut(lines1, lines2): return list(
             map(' | '.join, list(zip(lines1, lines2))))
